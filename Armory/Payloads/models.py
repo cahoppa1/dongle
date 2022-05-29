@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class ReturnedCipher(models.Model):
-    retuend = CharField(max_value=245, default='')
+    retuend = models.CharField(max_value=245, default='')
 
 class Seed1(models.Model):
     seed_1 = models.IntegerField(default=1)
