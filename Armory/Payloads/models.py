@@ -16,4 +16,6 @@ class Response(models.Model):
     cipher = models.CharField(default=None)
     depth = models.IntegerField(default=0)
     
-    
+
+class TypeSync(models.Model):
+    login = models.BooleanField(default=True)
