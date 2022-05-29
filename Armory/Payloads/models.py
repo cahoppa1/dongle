@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class ReturnedCipher(models.Model):
-    retuend = models.CharField(max_value=245, default='')
+    returned = models.CharField(max_length=245, default='')
 
 class Seed1(models.Model):
     seed_1 = models.IntegerField(default=1)
@@ -13,7 +13,7 @@ class Seed1(models.Model):
     )
     
 class Response(models.Model):
-    cipher = models.CharField(default=None)
+    cipher = models.CharField(max_length=233, default=None)
     depth = models.IntegerField(default=0)
     
 class TypeSync(models.Model):
