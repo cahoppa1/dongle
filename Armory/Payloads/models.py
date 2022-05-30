@@ -1,15 +1,17 @@
+from hashlib import sha1
 from django.db import models
 
 # Create your models here.
 
-class ReturnedCipher(models.Model):
-    returned = models.CharField(max_length=245, default='')
+class CipherText(models.Model):
+    md5 = models.CharField(max_length=245, default='')
+    sha1 = models.CharField(max_length=245, default='')
 
-class Seed1(models.Model):
+class Seeds(models.Model):
     seed_1 = models.IntegerField(default=1)
     seed_2 = models.IntegerField(default=1)
     inherited = models.ForeignKey (
-        ReturnedCipher, on_delete=models.CASCADE
+        CipherText, on_delete=models.CASCADE
     )
     
 class Response(models.Model):
@@ -19,7 +21,7 @@ class Response(models.Model):
 class TypeSync(models.Model):
     login = models.BooleanField(default=True)
     
-class type(models.Model):
-    qr = models.BooleanField(default=False)
+class QR(models.Model):
+    qrcode = models.BooleanField(default=False)
     
-    
+
